@@ -86,7 +86,7 @@ Or compile BerkeleyDB-4.8 manually, e.g:
 ```shell
 wget -O $HOME/db-4.8.30.NC.tar.gz https://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz && \
          tar -C $HOME -xzvf $HOME/db-4.8.30.NC.tar.gz && \
-         sudo sed -i 's/__atomic_compare_exchange(/__atomic_compare_exchange_db(/g' $HOME/db-4.8.30.NC/dbinc/atomic.h && \
+         sed -i 's/__atomic_compare_exchange(/__atomic_compare_exchange_db(/g' $HOME/db-4.8.30.NC/dbinc/atomic.h && \
          cd $HOME/db-4.8.30.NC/build_unix && \
          ../dist/configure --enable-cxx && \
          make && sudo make install && \
@@ -105,7 +105,7 @@ wget -O $HOME/boost_1_63_0.zip https://sourceforge.net/projects/boost/files/boos
          ./bootstrap.sh && \
          sudo ./b2 install && \
          cd .. && \
-         rm -rf boost_1_63_0
+         sudo rm -rf boost_1_63_0
 ```
 
 2. Cloning git repository:
